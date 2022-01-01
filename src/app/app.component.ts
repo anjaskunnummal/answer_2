@@ -1,8 +1,10 @@
 import { Component, HostListener, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { CartComponent } from './cart/cart.component';
 import { AccessAPIService } from './services/access-API.service';
 
 @Component({
@@ -12,7 +14,7 @@ import { AccessAPIService } from './services/access-API.service';
 })
 export class AppComponent {
   public cart_length :any=0;
-  constructor(private router: Router,private accessService:AccessAPIService) {
+  constructor(private router: Router,private accessService:AccessAPIService,public dialog: MatDialog) {
   }
 
   display = false;
@@ -42,6 +44,16 @@ export class AppComponent {
     }
 
   
+  }
+
+  goCart(){
+    const dialogRef = this.dialog.open(CartComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  
+
   }
 
  

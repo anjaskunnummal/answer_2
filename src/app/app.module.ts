@@ -23,6 +23,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Category1Component } from './category1/category1.component';
 import { CartComponent } from './cart/cart.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [			
@@ -51,7 +53,10 @@ import { CartComponent } from './cart/cart.component';
       MatTableModule,
       MatPaginatorModule,
       MatButtonModule,
-      MatSnackBarModule
+      MatSnackBarModule,
+      MatDialogModule,
+      FormsModule,
+      ReactiveFormsModule
       
   ],
   providers: [],

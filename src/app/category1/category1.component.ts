@@ -26,23 +26,28 @@ export class Category1Component implements OnInit {
 
   category_prod : any = [{
     name : 'Samsung galaxy s20',
-    image : 'https://images.hindustantimes.com/tech/img/2020/08/02/original/DSCF0956_1596372104016_1596372597451.jpg'
+    image : 'https://images.hindustantimes.com/tech/img/2020/08/02/original/DSCF0956_1596372104016_1596372597451.jpg',
+    quantity : 1
   },
 {
   name : 'Iphone 11pro',
-  image : 'https://www.davidjones.com/productimages/magnify/2/2041547_20071629_3021049.jpg'
+  image : 'https://www.davidjones.com/productimages/magnify/2/2041547_20071629_3021049.jpg',
+  quantity : 1
 },
 {
   name : 'Realme xpro',
-  image : 'https://th.bing.com/th/id/OIP.mwbjKlgFZGf8G_-XCcYt1QHaHa?pid=ImgDet&rs=1'
+  image : 'https://th.bing.com/th/id/OIP.mwbjKlgFZGf8G_-XCcYt1QHaHa?pid=ImgDet&rs=1',
+  quantity : 1
 },
 {
   name : 'Iphone 5',
-  image : 'https://d28i4xct2kl5lp.cloudfront.net/product_images/1550758208.84.jpg'
+  image : 'https://d28i4xct2kl5lp.cloudfront.net/product_images/1550758208.84.jpg',
+  quantity : 1
 },
 {
   name : 'Poco F2',
-  image : 'https://th.bing.com/th/id/OIP.PzOTsP6ePVTohyaJlvvD4wHaHa?pid=ImgDet&rs=1'
+  image : 'https://th.bing.com/th/id/OIP.PzOTsP6ePVTohyaJlvvD4wHaHa?pid=ImgDet&rs=1',
+  quantity : 1
 }
 ]
 
