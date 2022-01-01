@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,11 +22,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Category1Component } from './category1/category1.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
-  declarations: [		
+  declarations: [			
     AppComponent,
-      Category1Component
+      Category1Component,
+      CartComponent
    ],
   imports: [
   BrowserModule,
@@ -48,10 +50,11 @@ import { Category1Component } from './category1/category1.component';
       MatTooltipModule,
       MatTableModule,
       MatPaginatorModule,
-      MatButtonModule
+      MatButtonModule,
+      MatSnackBarModule
+      
   ],
   providers: [],
-  bootstrap: [AppComponent,
-  Category1Component]
+  bootstrap: [AppComponent,]
 })
 export class AppModule { }

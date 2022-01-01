@@ -1,7 +1,7 @@
 <mat-toolbar color="accent" class="header">
   <span style="padding-left: 0.3rem">BlaBla</span>
   <span class="example-spacer"></span>
-  <button color="accent" mat-raised-button matBadge="8" matBadgePosition="before" matBadgeColor="warn">
+  <button color="accent" mat-raised-button matBadge="{{cart_length}}" matBadgePosition="before" matBadgeColor="warn">
     cart
   </button>
   <button style="margin-left: 5px;" color="accent" mat-raised-button><mat-icon>person</mat-icon>User
@@ -26,5 +26,6 @@
 
   <mat-sidenav-content>
     <router-outlet></router-outlet>
+    <div style="height: 350px;"></div>
   </mat-sidenav-content>
 </mat-sidenav-container>

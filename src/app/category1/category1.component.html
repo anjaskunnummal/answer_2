@@ -1,3 +1,14 @@
-<p>
-  category1 works!
-</p>
+<span>Products Under :<span style="font-weight: bold;">{{category_name}}</span> </span>
+
+<div class="card">
+  <div class="card-main" *ngFor="let prod of category_prod">
+    <div class="card-img">
+      <img src="{{ prod.image }}" />
+    </div>
+    <div class="card-content">
+      <div>{{ prod.name }}</div>
+      <div><button mat-flat-button color="accent" (click)="addCart(prod)">Add to cart</button></div>
+    </div>
+  </div>
+  
+</div>

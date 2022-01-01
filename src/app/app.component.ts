@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AccessAPIService } from './services/access-API.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private router: Router) {}
+  public cart_length :any=0;
+  constructor(private router: Router,private accessService:AccessAPIService) {
+  }
 
   display = false;
   close_icon = false;
@@ -22,8 +25,14 @@ export class AppComponent {
   sidenav!: MatSidenav;
   control = new FormControl();
 
+
+
   ngOnInit() {
-    console.log(window.innerWidth);
+
+    this.accessService.cartCount$.subscribe((result:any)=>{
+      this.cart_length = result
+    })
+
     if (window.innerWidth < 768) {
       this.sidenav.fixedTopGap = 55;
       this.opened = false;
@@ -31,7 +40,11 @@ export class AppComponent {
       this.sidenav.fixedTopGap = 55;
       this.opened = true;
     }
+
+  
   }
+
+ 
 
   @HostListener('window:resize', ['$event'])
   onResize(event: { target: { innerWidth: number } }) {
