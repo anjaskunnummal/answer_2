@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { AccessAPIService } from '../services/access-API.service';
+import {startWith, map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-category1',
@@ -16,6 +19,10 @@ export class Category1Component implements OnInit {
   public category_prod: any = [];
 
   public cart_length:any;
+
+  control = new FormControl();
+  Values!: any[];
+ SearchValues!: Observable<any>;
 
   constructor(
     private route: ActivatedRoute,
@@ -102,9 +109,28 @@ export class Category1Component implements OnInit {
             'https://th.bing.com/th/id/OIP.WxXtmbskt6TgIHN1TegFewHaHa?pid=ImgDet&rs=1',
           quantity: 1,
         },
-      ];
+      ]
+      
     }
+    //code for product search
+    this.SearchValues = this.control.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value))
+    );
   }
+
+  private _filter(value: string): string[] {
+    const filterValue = this._normalizeValue(value);
+    return this.category_prod.filter((val:any) => this._normalizeValue(val.name).includes(filterValue));
+  }
+  
+  private _normalizeValue(value: string): string {
+    return value.toLowerCase().replace(/\s/g, '');
+ 
+  }
+  ///
+
+  //code for adding item into cart
 
   addCart(product: any) {
     if(this.cart_already_items!=null){
@@ -126,6 +152,7 @@ export class Category1Component implements OnInit {
     }
  
   }
+  //
 
   updateCartCount(count: any) {
     this.accessService.getAccessDetails(count);

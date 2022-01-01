@@ -1,7 +1,7 @@
 <span>Products Under :<span style="font-weight: bold;">{{category_name}}</span> </span>
-
+<div style="float: right;"><input  [formControl]="control" matInput placeholder="search items"></div>
 <div class="card">
-  <div class="card-main" *ngFor="let prod of category_prod">
+  <div class="card-main" *ngFor="let prod of SearchValues | async">
     <div class="card-img">
       <img src="{{ prod.image }}" />
     </div>
