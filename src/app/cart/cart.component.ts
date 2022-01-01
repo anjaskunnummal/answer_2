@@ -29,10 +29,13 @@ export class CartComponent implements OnInit {
 
     this.cart_length = localStorage.getItem('cart-count')
   }
+  
   delete(element:any,index:any){
     const data = this.dataSource.data;
     data.splice( index, 1);
     this.dataSource.data = data;
+    this.cart_length--
+    this.accessService.getAccessDetails(this.cart_length )
     this.openSnackBar('Product removed')
 
   }

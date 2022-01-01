@@ -26,11 +26,12 @@ import { CartComponent } from './cart/cart.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
-  declarations: [			
+  declarations: [				
     AppComponent,
       Category1Component,
-      CartComponent
+      CartComponent,
    ],
   imports: [
   BrowserModule,

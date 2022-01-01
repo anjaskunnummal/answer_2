@@ -7,14 +7,18 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'category1',
+    redirectTo: 'home',
   },
   {
     path: 'cart',
     component: CartComponent,
   },
   {
-    path: ':category-name',
+    path: 'home',
+    component: Category1Component,
+  },
+  {
+    path: 'home/:category-name',
     component: Category1Component,
   },
   

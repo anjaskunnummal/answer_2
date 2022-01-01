@@ -47,14 +47,21 @@ export class AppComponent {
   }
 
   goCart(){
-    const dialogRef = this.dialog.open(CartComponent);
-
+    const dialogRef = this.dialog.open(CartComponent, {
+      disableClose: true,
+  }
+);
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   
 
   }
+gotoCategory(val:any){
+  this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+    this.router.navigate(['home/'+val]);
+});
+}
 
  
 
